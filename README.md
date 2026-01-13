@@ -4,10 +4,7 @@
 # Conversão de binário → decimal #
 - Identificar as posições: cada dígito binário corresponde a uma potência de 2, começando da direita (2⁰, 2¹, 2²...).
 - Multiplicar e somar: multiplica cada dígito pelo valor da potência de 2 correspondente e soma os resultados.
-- Exemplo: 1011_2
-(1\cdot 2^3)+(0\cdot 2^2)+(1\cdot 2^1)+(1\cdot 2^0)=8+0+2+1=11
-- Resultado: 1011_2=11_{10}.
-
+- 
 # Conversão de decimal → binário #
 - Divisão sucessiva por 2: divide o número decimal por 2, anotando o resto (0 ou 1).
 - Repetir até o quociente ser 0.
