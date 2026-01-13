@@ -61,21 +61,21 @@ Resultado: 13_{10}=1101_2.
 
 # Como rodar o jogo no VSCode #
 
-1 - Instale o Python
+1 Instale o Python
 - Certifique-se de ter o Python 3.10+ instalado.
 - Verifique com:
 python --version
-2 - Abra o projeto no VS Code
+2 Abra o projeto no VS Code
 - Clique em File → Open Folder e selecione a pasta do jogo.
 - O arquivo principal deve ser jogo_binario.py.
-3 - Instale a extensão do Python
+3 Instale a extensão do Python
 - No VS Code, vá em Extensions (Ctrl+Shift+X).
 - Procure por Python e instale a oficial da Microsoft.
 - Isso habilita recursos como execução, depuração e linting.
-4 - Execute o jogo
+4 Execute o jogo
 - Abra o arquivo jogo_binario.py.
 - Clique em Run → Start Debugging (F5) ou use o botão ▶️ no canto superior direito.
 - A janela do jogo em Tkinter vai abrir automaticamente.
-5 - Ranking
+5 Ranking
 - O ranking é salvo em ranking.json.
 - Se quiser resetar, basta apagar o arquivo.
