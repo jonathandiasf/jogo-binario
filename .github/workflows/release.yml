@@ -1,0 +1,74 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run all tests
+      run: |
+        pytest -v --tb=short
+
+    - name: Extract version
+      id: version
+      run: |
+        VERSION=${GITHUB_REF#refs/tags/}
+        echo "version=$VERSION" >> $GITHUB_OUTPUT
+        echo "Release version: $VERSION"
+
+    - name: Create release body
+      run: |
+        echo "# Release ${{ steps.version.outputs.version }}" > RELEASE_NOTES.md
+        echo "" >> RELEASE_NOTES.md
+        echo "See [CHANGELOG.md](CHANGELOG.md) for details." >> RELEASE_NOTES.md
+        echo "" >> RELEASE_NOTES.md
+        echo "## Installation" >> RELEASE_NOTES.md
+        echo "\`\`\`bash" >> RELEASE_NOTES.md
+        echo "git clone https://github.com/jonathandiasf/jogo-binario.git" >> RELEASE_NOTES.md
+        echo "cd jogo-binario" >> RELEASE_NOTES.md
+        echo "python -m venv venv" >> RELEASE_NOTES.md
+        echo "source venv/bin/activate  # On Windows: .\venv\Scripts\Activate.ps1" >> RELEASE_NOTES.md
+        echo "pip install -r requirements.txt" >> RELEASE_NOTES.md
+        echo "python RANKING.py" >> RELEASE_NOTES.md
+        echo "\`\`\`" >> RELEASE_NOTES.md
+
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        body_path: RELEASE_NOTES.md
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Release Summary
+      run: |
+        echo "✅ Release ${{ steps.version.outputs.version }} published successfully!"
+        echo ""
+        echo "📊 Release Information:"
+        echo "- Version: ${{ steps.version.outputs.version }}"
+        echo "- Commit: ${{ github.sha }}"
+        echo "- Tests: Passed ✅"
+        echo ""
+        echo "🚀 Your release is now available for download!"

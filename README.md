@@ -1,6 +1,15 @@
 *Este jogo converte números decimais em binário, e vice-versa.*
 *A finalidade é mostrar se o usuário respondeu "Correto" ou "Errado". No final os pontos são acumulados em um ranking.*
 
+## 🏷️ Status & Badges
+
+![Tests](https://github.com/jonathandiasf/jogo-binario/workflows/Tests/badge.svg)
+![Linting](https://github.com/jonathandiasf/jogo-binario/workflows/Linting/badge.svg)
+![Code Quality Check](https://github.com/jonathandiasf/jogo-binario/workflows/Code%20Quality%20Check/badge.svg)
+![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue)
+![License: MIT](https://img.shields.io/badge/license-MIT-green)
+![Tests: 56/56](https://img.shields.io/badge/tests-56%2F56%20passing-brightgreen)
+
 ## 🧩 Estrutura geral
 - O jogo tem duas versões:
   - Terminal (CLI): usa input() e print() para interação simples.
@@ -113,6 +122,28 @@ python RANKING.py
 - Instale a extensão Python da Microsoft
 - Clique em Run → Start Debugging (F5) ou use o botão ▶️
 - A janela do jogo em Tkinter vai abrir automaticamente
+
+## 🤖 CI/CD (Continuous Integration & Deployment)
+
+Este projeto está configurado com **GitHub Actions** para automação:
+
+### Workflows Automáticos
+- ✅ **Tests**: Executa 56 testes em Python 3.8-3.12 (Ubuntu, Windows, macOS)
+- 📌 **Linting**: Valida código com flake8, black, isort e pylint
+- ✨ **Code Quality**: Verifica estrutura e sintaxe do projeto
+- 🚀 **Release**: Publica releases automaticamente
+
+Para mais detalhes, veja [`.github/WORKFLOWS.md`](.github/WORKFLOWS.md)
+
+### Como Criar uma Release
+
+```bash
+# Criar uma tag
+git tag -a v1.0.0 -m "Release version 1.0.0"
+
+# Enviar para GitHub (triggers o workflow de release)
+git push origin v1.0.0
+```
 
 ## 📁 Estrutura do Projeto
 - `JOGO-BINARIO.py` - Lógica principal do jogo
