@@ -29,4 +29,57 @@ Resultado: 13_{10}=1101_2.
 
 # Como rodar o jogo na sua máquina #
 
+## Pré-requisitos
+- Python 3.7 ou superior
+- Git (opcional, para clonar o repositório)
+
+## Instalação
+
+### 1. Clone o repositório
+```bash
+git clone <seu-repositorio-url>
+cd jogo_binario.py
+```
+
+### 2. Crie um ambiente virtual
+```bash
+python -m venv venv
+```
+
+### 3. Ative o ambiente virtual
+
+**No Windows (PowerShell):**
+```bash
+.\venv\Scripts\Activate.ps1
+```
+
+**No Windows (CMD):**
+```bash
+venv\Scripts\activate.bat
+```
+
+**No macOS/Linux:**
+```bash
+source venv/bin/activate
+```
+
+### 4. Instale as dependências (se houver)
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Execute o jogo
+```bash
+python RANKING.py
+```
+
+## Estrutura do Projeto
+- `JOGO-BINARIO.py` - Lógica principal do jogo
+- `RANKING.py` - Interface gráfica com tkinter
+- `ranking.json` - Arquivo de persistência do ranking
+- `.gitignore` - Arquivo para ignorar diretórios/arquivos desnecessários
+- `requirements.txt` - Dependências do projeto
+
+## Autores e Licença
+Projeto educacional de Conversão Binária
 

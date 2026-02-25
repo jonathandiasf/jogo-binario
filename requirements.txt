@@ -1,0 +1,11 @@
+# Nenhuma dependência externa é necessária.
+# O projeto usa apenas módulos nativos do Python:
+# - tkinter (interface gráfica)
+# - random (números aleatórios)
+# - json (persistência de dados)
+
+# Para criar um novo ambiente virtual:
+# python -m venv venv
+
+# Para instalar dependências (se houver no futuro):
+# pip install -r requirements.txt
