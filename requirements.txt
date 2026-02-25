@@ -1,11 +1,21 @@
-# Nenhuma dependência externa é necessária.
+# Dependências do Jogo Binário
+
+# Nenhuma dependência externa é necessária para executar o jogo.
 # O projeto usa apenas módulos nativos do Python:
 # - tkinter (interface gráfica)
 # - random (números aleatórios)
 # - json (persistência de dados)
 
+# Dependências de desenvolvimento e testes:
+pytest>=9.0.0  # Framework de testes unitários
+
 # Para criar um novo ambiente virtual:
 # python -m venv venv
 
-# Para instalar dependências (se houver no futuro):
+# Para instalar dependências:
 # pip install -r requirements.txt
+
+# Para executar os testes:
+# pytest
+# pytest -v (verbose, mostra cada teste)
+# pytest --cov (com cobertura de código, requer pytest-cov)

@@ -17,7 +17,6 @@ Data: 2026
 """
 
 import random
-from typing import str as str_type
 
 
 def gerar_numero() -> int:
